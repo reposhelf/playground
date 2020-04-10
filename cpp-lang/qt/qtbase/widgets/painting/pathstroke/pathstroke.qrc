@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pathstroke.html</file>
+        <file>pathstrokewidget.cpp</file>
+    </qresource>
+</RCC>

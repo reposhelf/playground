@@ -1,0 +1,6 @@
+Exercise 5.7:
+Give the recurcive depth of Euclid's algorithm when the input values are two
+consequtive Fibonacci numbers (Fn and Fn + 1).
+
+For gcd(Fn, Fn+1) the recurcive depth is n, if n > 0. If n = 0, the recurcive
+depth is n + 1.

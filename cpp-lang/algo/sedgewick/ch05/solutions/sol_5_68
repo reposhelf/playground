@@ -1,0 +1,29 @@
+Exersice 5.68:
+
+Question 1:
+How many external nodes are there in an M-ary tree with N internal nodes?
+
+Answer 1:
+M - arity;
+N - count of internal nodes;
+X - ? (count of external nodes);
+
+1st, find count of all links in a tree:
+    N * M
+
+2nd, subtract from the number from previous step count of internal nodes, but excluding root:
+    N * M - (N - 1)
+
+So,
+    X = N * M - (N - 1)
+
+Question 2:
+Use your answer to give the amount of memory required to represent such a tree,
+assuming that links and items require one word of memory each.
+
+Answer 2:
+Suppose that I have a 4-ary tree with 12 internal nodes and word on my architecture
+has 8 byte.
+Count of links is M * N = 48.
+Count of all nodes is (M * N + 1) = 49.
+Memory to be used is 48 + 49 = 97 words or 776 bytes.

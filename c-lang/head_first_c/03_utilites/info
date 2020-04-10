@@ -1,0 +1,3 @@
+$ ./geo2json < gpsdata.csv > map # read data from 'gpsdata.csv' and write results into 'map'
+$ ./bermuda | ./geo2json # output of the bermuda is input of the geo2json
+$ (./bermuda | ./geo2json) < spooky.csv > output.json # read 'spooky.csv' and write result into 'map.json'

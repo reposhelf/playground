@@ -1,0 +1,9 @@
+Strings often contain characters that represent numbers. For example, we
+represent the numeric value 15 as a string with two characters, the character
+'1' followed by the character '5'. In general, the character representation of
+a number differs from its numeric value. The numeric value 15 stored in a 
+16-bit short has the bit pattern 0000000000001111, whereas the character
+string "15" represented as two Latin-1 chars has the bit pattern
+0011000100110101. The first byte represents the character '1' which has the
+octal value 061, and the second byte represents '5', which in Latin-1 is octal
+065.

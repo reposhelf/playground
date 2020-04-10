@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>icons/greenpak1.png</file>
+        <file>icons/bulb.png</file>
+    </qresource>
+</RCC>

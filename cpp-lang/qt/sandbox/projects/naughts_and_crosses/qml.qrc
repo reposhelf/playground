@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/Square.qml</file>
+        <file>qml/Board.qml</file>
+        <file>qml/StartPage.qml</file>
+        <file>qml/BattlePage.qml</file>
+        <file>qml/ScorePane.qml</file>
+    </qresource>
+</RCC>

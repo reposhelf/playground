@@ -1,0 +1,29 @@
+Exercise 4.40:
+An uppercase letter means put at the begining, a lowercase letter means put at the end, a plus sign means get from the begining, and an asterisk means get from the end in the sequence
+E A s + Y + Q U E * * + s t + * + I O * n + + *.
+Geve the sequence of velues returned by the get operations when this sequence of operations is performed on an initially empty deque.
+
+E       E
+A       AE
+s       AEs
++   A   Es
+Y       YEs
++   Y   Es
+Q       QEs
+U       UQEs
+E       EUQEs
+*   s   EUQE
+*   E   EUQ
++   E   UQ
+s       UQs
+t       UQst
++   U   Qst
+*   t   Qs
++   Q   s
+I       Is
+O       OIs
+*   s   OI
+n       OIn
++   O   In
++   I   n
+*   n

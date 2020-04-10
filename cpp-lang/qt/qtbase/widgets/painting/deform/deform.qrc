@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pathdeform.cpp</file>
+        <file>pathdeform.html</file>
+    </qresource>
+</RCC>

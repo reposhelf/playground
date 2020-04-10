@@ -1,0 +1,1344 @@
+
+
+Swift is a new programming language for iOS, macOS, watchOS, and tvOS apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.
+
+Swift has been years in the making. Apple laid the foundation for Swift by advancing our existing compiler, debugger, and framework infrastructure. We simplified memory management with Automatic Reference Counting (ARC). Our framework stack, built on the solid base of Foundation and Cocoa, has been modernized and standardized throughout. Objective-C itself has evolved to support blocks, collection literals, and modules, enabling framework adoption of modern language technologies without disruption. Thanks to this groundwork, we can now introduce a new language for the future of Apple software development.
+
+Swift feels familiar to Objective-C developers. It adopts the readability of Objective-C’s named parameters and the power of Objective-C’s dynamic object model. It provides seamless access to existing Cocoa frameworks and mix-and-match interoperability with Objective-C code. Building from this common ground, Swift introduces many new features and unifies the procedural and object-oriented portions of the language.
+
+Swift is friendly to new programmers. It is the first industrial-quality systems programming language that is as expressive and enjoyable as a scripting language. It supports playgrounds, an innovative feature that allows programmers to experiment with Swift code and see the results immediately, without the overhead of building and running an app.
+
+Swift combines the best in modern language thinking with wisdom from the wider Apple engineering culture. The compiler is optimized for performance, and the language is optimized for development, without compromising on either. It’s designed to scale from “hello, world” to an entire operating system. All this makes Swift a sound future investment for developers and for Apple.
+
+Swift is a fantastic way to write iOS, macOS, watchOS, and tvOS apps, and will continue to evolve with new features and capabilities. Our goals for Swift are ambitious. We can’t wait to see what you create with it.
+
+
+
+Swift is a new programming language for iOS, macOS, watchOS, and tvOS app development. Nonetheless, many parts of Swift will be familiar from your experience of developing in C and Objective-C.
+
+Swift provides its own versions of all fundamental C and Objective-C types, including Int for integers, Double and Float for floating-point values, Bool for Boolean values, and String for textual data. Swift also provides powerful versions of the three primary collection types, Array, Set, and Dictionary, as described in Collection Types.
+
+Like C, Swift uses variables to store and refer to values by an identifying name. Swift also makes extensive use of variables whose values cannot be changed. These are known as constants, and are much more powerful than constants in C. Constants are used throughout Swift to make code safer and clearer in intent when you work with values that do not need to change.
+
+In addition to familiar types, Swift introduces advanced types not found in Objective-C, such as tuples. Tuples enable you to create and pass around groupings of values. You can use a tuple to return multiple values from a function as a single compound value.
+
+Swift also introduces optional types, which handle the absence of a value. Optionals say either “there is a value, and it equals x” or “there isn’t a value at all”. Using optionals is similar to using nil with pointers in Objective-C, but they work for any type, not just classes. Not only are optionals safer and more expressive than nil pointers in Objective-C, they are at the heart of many of Swift’s most powerful features.
+
+Swift is a type-safe language, which means the language helps you to be clear about the types of values your code can work with. If part of your code expects a String, type safety prevents you from passing it an Int by mistake. Likewise, type safety prevents you from accidentally passing an optional String to a piece of code that expects a nonoptional String. Type safety helps you catch and fix errors as early as possible in the development process.
+Constants and Variables
+
+Constants and variables associate a name (such as maximumNumberOfLoginAttempts or welcomeMessage) with a value of a particular type (such as the number 10 or the string "Hello"). The value of a constant cannot be changed once it is set, whereas a variable can be set to a different value in the future.
+Declaring Constants and Variables
+
+Constants and variables must be declared before they are used. You declare constants with the let keyword and variables with the var keyword. Here’s an example of how constants and variables can be used to track the number of login attempts a user has made: 
+
+Tradition suggests that the first program in a new language should print the words “Hello, world!” on the screen. In Swift, this can be done in a single line:
+
+ If you have written code in C or Objective-C, this syntax looks familiar to you—in Swift, this line of code is a complete program. You don’t need to import a separate library for functionality like input/output or string handling. Code written at global scope is used as the entry point for the program, so you don’t need a main() function. You also don’t need to write semicolons at the end of every statement.
+
+This tour gives you enough information to start writing code in Swift by showing you how to accomplish a variety of programming tasks. Don’t worry if you don’t understand something—everything introduced in this tour is explained in detail in the rest of this book. 
+
+This first chapter of the book will get us going with Rust and its tooling. First, we’ll install Rust. Then, the classic ‘Hello World’ program. Finally, we’ll talk about Cargo, Rust’s build system and package manager.
+The first step to using Rust is to install it. Generally speaking, you’ll need an Internet connection to run the commands in this section, as we’ll be downloading Rust from the Internet.
+
+We’ll be showing off a number of commands using a terminal, and those lines all start with $. We don't need to type in the $s, they are there to indicate the start of each command. We’ll see many tutorials and examples around the web that follow this convention: $ for commands run as our regular user, and # for commands we should be running as an administrator.
+
+On June 25, the ISO C++ committee completed its summer meeting in Oulu, Finland, hosted by Symbio and the Finnish national body.
+
+We again had some 100 experts officially representing nine national bodies. As usual, we met for six days Monday through Saturday, and around the clock from 8:30am till 11pm most days – evening sessions regularly went a little later than the usual 10pm because it was Midsummer and there was literally no full night all week long at that short distance from the Arctic Circle, and people commonly did a double take when they looked at their watches and were surprised to find that it was already nearly midnight.
+
+Here’s a summary of what happened, with some details about the current ISO C++ process so you can see just how the work is progressing and getting released. I’ve tried to add some links to the relevant feature design papers, or to the papers that summarize what was done which in turn usually carry more links to the design papers.
+C++17 is feature-complete, enters review period
+
+The big news is that C++ is feature-complete, and on time! We added several more features to the C++17 working paper (see next section), then approved the result to be sent out this summer for its major ISO international comment ballot, which is the Committee Draft or “CD” ballot.
+
+Between now and our November meeting, national bodies around the world will be reviewing the draft and reporting any concerns about feature design details and wording correctness or consistency. Then for probably the next two meetings we’ll be addressing every national body comment and recording its resolution, as well as continuing to process our own known issues lists to fine-tune the text of the standard. That usually takes two meetings, and if that’s the case again this time then we’ll be putting the finishing touches on C++17 in our November and March meetings and then, we hope, sending C++17 out for its possibly-final ballot in the spring. If we need an extra meeting, then that would extend to the July meeting next year and the possibly-final ballot in late summer.
+
+So C++17 is and tracking to ship on schedule next year. In my March trip report, I mentioned that after completing C++11 we switched to a “train model” where we have been shipping the standard consistently every three years. So far, we have been running the trains on time: C++14 was actually the first C++ standard ever that shipped when expected, and now C++17 is on track to do it again. This is excellent news for the community because it enables implementers to track the standard closely, whereas in previous releases they often held back from implementing new features aggressively because with an open-ended schedule the committee could (and did) change its mind again about the design of some feature before the standard actually shipped. The ISO C++ committee is now sticking to a high quality bar, voting features in when they’re stable and releasing on time, which removes uncertainty and is a major reason why compilers are more in sync than ever before: After C++98 shipped, it took 5 years before we saw the first complete conforming compiler that implemented all language features (modulo bugs of course); after C++11 shipped, it took 3 years; when C++14 shipped, it took months. Now, many C++17 features are already available in major compilers, and I wouldn’t be surprised if C++17 repeated C++14’s synchronization with the community so that we see at least one major implementation that has all C++17 features in the same year that C++17 is published. This is great news for the community, because it means we have to play less of the “which compilers actually implement which features” game; true, we still need to deal with older compilers, and some compilers are still not as quick as others to ship the latest features, but all of the major compilers’ current releases are in closer sync with the standard than they’ve ever been before and even the delta between them continues to shrink, which is good news for all C++ users.
+
+Note: Last time I mentioned that there was some thought of moving to a two-year cadence after C++17, but for now we’re staying with three years, so the next standard after C++17 will be C++20.
+More features added to C++17
+
+At this meeting, we added several more features into C++17; you can find a good summary of those features in Bryce Lelbach’s Reddit post. Again, note that these are just the ones we added at this meeting; the complete list of C++17 features is longer. For example, see my March trip report for what was added at the spring meeting.
+Language features
+
+Here are some of the more noticeable language features we added to C++17 in Oulu. I’ll merge from Bryce’s nice list (thanks Bryce!), my own comments in the previous trip report, and some new comments and examples:
+
+Dynamic memory allocation for over-aligned data: Extending the C++11 alignof/alignas for heap allocated memory control.
+
+Template argument deduction for constructors, so that you can write just pair p(2, 4.5); instead of pair<int,double> p(2, 4.5); or auto p = make_pair(2, 4.5);. This is pretty sweet, including that it obsoletes many “make” helpers.
+
+template <auto>: Recall that templates can take “non-type parameters,” or ordinary compile-time values; a familiar example is std::array<widget,10> which is an array of 10 widget objects, passing 10 as a compile-time number. Well, as of C++11 we allow “auto”matically deducing the type of local variables:
+
+Block devices
+
+Let's take a good look at disk-oriented aspects of Gentoo Linux and Linux in general, including Linux filesystems, partitions, and block devices. Once the ins and outs of disks and filesystems are understood, partitions and filesystems can be established for the Gentoo Linux installation.
+
+To begin, let's look at block devices. The most famous block device is probably the one that represents the first drive in a Linux system, namely /dev/sda. SCSI and Serial ATA drives are both labeled /dev/sd*; even IDE drives are labeled /dev/sd* with the newer libata framework in the kernel. When using the old device framework, then the first IDE drive is /dev/hda.
+
+The block devices above represent an abstract interface to the disk. User programs can use these block devices to interact with your disk without worrying about whether the drives are IDE, SCSI, or something else. The program can simply address the storage on the disk as a bunch of contiguous, randomly-accessible 512-byte blocks.
+
+
+Partition tables
+
+Although it is theoretically possible to use a full disk to house a Linux system (when creating a btrfs RAID for example), this is almost never done in practice. Instead, full disk block devices are split up in smaller, more manageable block devices. On amd64 systems, these are called partitions. There are currently two standard partitioning technologies in use: MBR and GPT.
+MBR
+
+The MBR (Master Boot Record) setup uses 32-bit identifiers for the start sector and length of the partitions, and supports three partition types: primary, extended, and logical. Primary partitions have their information stored in the master boot record itself - a very small (usually 512 bytes) location at the very beginning of a disk. Due to this small space, only four primary partitions are supported (for instance, /dev/sda1 to /dev/sda4).
+
+To support more partitions, one of the primary partitions can be marked as an extended partition. This partition can then contain logical partitions (partitions within a partition).
+
+Each partition is limited to 2 TB in size (due to the 32-bit identifiers). Also, the MBR setup does not provide any backup-MBR, so if an application or user overwrites the MBR, all partition information is lost.
+GPT
+
+The GPT (GUID Partition table) setup uses 64-bit identifiers for the partitions. The location in which it stores the partition information is also much bigger than the 512 bytes of an MBR, and there is no limit on the amount of partitions. Also the size of a partition is bounded by a much greater limit (almost 8 ZB - yes, zettabytes).
+
+When a system's software interface between the operating system and firmware is UEFI (instead of BIOS), GPT is almost mandatory as compatibility issues will arise with MBR.
+
+GPT also has the advantage that it has a backup GPT at the end of the disk, which can be used to recover damage of the primary GPT at the beginning. GPT also carries CRC32 checksums to detect errors in the header and partition tables.
+GPT or MBR
+
+From the description above, one might think that using GPT should always be the recommended approach, however there are a few caveats.
+
+Using GPT on a BIOS-based computer works, but then one cannot dual-boot with a Microsoft Windows operating system. The reason is that Microsoft Windows will boot in EFI mode if it detects a GPT partition lab
+
+How many and how big?
+
+The number of partitions is highly dependent on the environment. For instance, if there are lots of users, then it is advised to have /home/ separate as it increases security and makes backups easier. If Gentoo is being installed to perform as a mail server, then /var/ should be separate as all mails are stored inside /var/. A good choice of filesystem will then maximize the performance. Game servers will have a separate /opt/ as most gaming servers are installed there. The reason is similar for /home/: security and backups. In most situations, /usr/ is to be kept big: not only will it contain the majority of applications, the Portage tree alone takes around 500 MBs excluding the various sources that are stored in it.
+
+As can be seen, it very much depends on what the administrator wants to achieve. Separate partitions or volumes have the following advantages:
+
+    Choose the best performing filesystem for each partition or volume.
+    The entire system cannot run out of free space if one defunct tool is continuously writing files to a partition or volume.
+    If necessary, file system checks are reduced in time, as multiple checks can be done in parallel (although this advantage is more with multiple disks than it is with multiple partitions).
+    Security can be enhanced by mounting some partitions or volumes read-only, nosuid (setuid bits are ignored), noexec (executable bits are ignored) etc.
+
+However, multiple partitions have disadvantages as well. If not configured properly, the system might have lots of free space on one partition and none on another. Another nuisance is that separate partitions - especially for important mount points like /usr/ or /var/ - often require the administrator to boot with an initramfs to mount the partition before other boot scripts start. This isn't always the case though, so results may vary.
+
+There is also a 15-partition limit for SCSI and SATA unless the disk uses GPT labels.
+What about swap space?
+
+There is no perfect value for the swap partition. The purpose of swap space is to provide disk storage to the kernel when internal memory (RAM) is under pressure. A swap space allows for the kernel to move memory pages that are not likely to be accessed soon to disk (swap or page-out), freeing memory. Of course, if that memory is suddenly needed, these pages need to be put back in memory (page-in) which will take a while (as disks are very slow compared to internal memory).
+
+When the system is not going to run memory intensive applications or the system has lots of memory available, then it probably does not need much swap space. However, swap space is also used to store the entire memory in case of hibernation. If the system is going to need hibernation, then a bigger swap space is necessary, often at least the amount of memory installed in the system.
+
+
+What is the BIOS boot partition?
+
+A BIOS boot partition is a very small (1 to 2 MB) partition in which boot loaders like GRUB2 can put additional data that doesn't fit in the allocated storage (a few hundred bytes in case of MBR) and cannot be placed elsewhere.
+
+Such partitions are not always necessary, but considering the low space consumption and the difficulties we have with documenting the plethora of partitioning differences otherwise, it is recommended to create it in either case.
+
+For completeness, the BIOS boot partition is needed when GPT partition layout is used with GRUB2, or when the MBR partition layout is used with GRUB2 when the first partition starts earlier than the 1 MB location on the disk. 
+
+Introduction
+
+Now that the partitions are created, it is time to place a filesystem on them. In the next section the various file systems that Linux supports are described. Readers that already know which filesystem to use can continue with Applying a filesystem to a partition. The others should read on to learn about the available filesystems...
+Filesystems
+
+Several filesystems are available. Some of them are found stable on the amd64 architecture - it is advised to read up on the filesystems and their support state before selecting a more experimental one for important partitions.
+
+btrfs
+    A next generation filesystem that provides many advanced features such as snapshotting, self-healing through checksums, transparent compression, subvolumes and integrated RAID. A few distributions have begun to ship it as an out-of-the-box option, but it is not production ready. Reports of filesystem corruption are common. Its developers urge people to run the latest kernel version for safety because the older ones have known problems. This has been the case for years and it is too early to tell if things have changed. Fixes for corruption issues are rarely backported to older kernels. Proceed with caution when using this filesystem!
+ext2
+    This is the tried and true Linux filesystem but doesn't have metadata journaling, which means that routine ext2 filesystem checks at startup time can be quite time-consuming. There is now quite a selection of newer-generation journaled filesystems that can be checked for consistency very quickly and are thus generally preferred over their non-journaled counterparts. Journaled filesystems prevent long delays when the system is booted and the filesystem happens to be in an inconsistent state.
+ext3
+    The journaled version of the ext2 filesystem, providing metadata journaling for fast recovery in addition to other enhanced journaling modes like full data and ordered data journaling. It uses an HTree index that enables high performance in almost all situations. In short, ext3 is a very good and reliable filesystem.
+ext4
+    Initially created as a fork of ext3, ext4 brings new features, performance improvements, and removal of size limits with moderate changes to the on-disk format. It can span volumes up to 1 EB and with maximum file size of 16TB. Instead of the classic ext2/3 bitmap block allocation ext4 uses extents, which improve large file performance and reduce fragmentation. Ext4 also provides more sophisticated block allocation algorithms (delayed allocation and multiblock allocation) giving the filesystem driver more ways to optimize the layout of data on the disk. Ext4 is the recommended all-purpose all-platform filesystem.
+f2fs
+    The Flash-Friendly File System was originally created by Samsung for the use with NAND flash memory. As of Q2, 2016, this filesystem is still considered immature, but it is a decent choice when installing Gentoo to microSD cards, USB drives, or other flash-based storage devices.
+JFS
+    IBM's high-performance journaling filesystem. JFS is a light, fast and reliable B+tree-based filesystem with good performance in various conditions.
+ReiserFS
+    A B+tree-based journaled filesystem that has good overall performance, especially when dealing with many tiny files at the cost of more CPU cycles. ReiserFS appears to be less maintained than other filesystems.
+XFS
+    A filesystem with metadata journaling which comes with a robust feature-set and is optimized for scalability. XFS seems to be less forgiving to various hardware problems.
+vfat
+    Also known as FAT32, is supported by Linux but does not support any permission settings. It is mostly used for interoperability with other operating systems (mainly Microsoft Windows) but is also a necessity for some system firmware (like UEFI).
+NTFS
+    This "New Technology" filesystem is the flagship filesystem of Microsoft Windows. Similar to vfat above it does not store permission settings or extended attributes necessary for BSD or Linux to function properly, therefore it cannot be used as a root filesystem. It should only be used for interoperability with Microsoft Windows systems (note the emphasis on only).
+
+When using ext2, ext3, or ext4 on a small partition (less than 8GB), then the file system must be created with the proper options to reserve enough inodes. The mke2fs (mkfs.ext2) application uses the "bytes-per-inode" setting to calculate how many inodes a file system should have. On smaller partitions, it is advised to increase the calculated number of inodes.
+
+On ext2, this can be done using the following command: 
+
+Configuring the USE variable
+
+USE is one of the most powerful variables Gentoo provides to its users. Several programs can be compiled with or without optional support for certain items. For instance, some programs can be compiled with gtk-support, or with qt-support. Others can be compiled with or without SSL support. Some programs can even be compiled with framebuffer support (svgalib) instead of X11 support (X-server).
+
+Most distributions compile their packages with support for as much as possible, increasing the size of the programs and startup time, not to mention an enormous amount of dependencies. With Gentoo users can define what options a package should be compiled with. This is where USE comes into play.
+
+In the USE variable users define keywords which are mapped onto compile-options. For instance, ssl will compile ssl-support in the programs that support it. -X will remove X-server support (note the minus sign in front). gnome gtk -kde -qt4 will compile programs with GNOME (and GTK) support, and not with KDE (and Qt) support, making the system fully tweaked for GNOME (if the architecture supports it).
+
+The default USE settings are placed in the make.defaults files of the Gentoo profile used by the system. Gentoo uses a (complex) inheritance system for its profiles, which we will not dive into at this stage. The easiest way to check the currently active USE settings is to run emerge --info and select the line that starts with USE: 
+About fstab
+
+Under Linux, all partitions used by the system must be listed in /etc/fstab. This file contains the mount points of those partitions (where they are seen in the file system structure), how they should be mounted and with what special options (automatically or not, whether users can mount them or not, etc.)
+Creating the fstab file
+
+The /etc/fstab file uses a table-like syntax. Every line consists of six fields, separated by whitespace (space(s), tabs or a mixture). Each field has its own meaning:
+
+    The first field shows the partition described (the path to the device file)
+    The second field shows the mount point at which the partition should be mounted
+    The third field shows the filesystem used by the partition
+    The fourth field shows the mount options used by mount when it wants to mount the partition. As every filesystem has its own mount options, users are encouraged to read the mount man page (man mount) for a full listing. Multiple mount options are comma-separated.
+    The fifth field is used by dump to determine if the partition needs to be dumped or not. This can generally be left as 0 (zero).
+    The sixth field is used by fsck to determine the order in which filesystems should be checked if the system wasn't shut down properly. The root filesystem should have 1 while the rest should have 2 (or 0 if a filesystem check isn't necessary).
+    In the remainder of the text, we use the default /dev/sd* block device files as partition. Users can also opt to use the symbolic links in the /dev/disk/by-id/ or /dev/disk/by-uuid/ locations. These names are not likely to change, whereas the default block device files naming depends on a number of factors (such as how and in what order the disks are attached to the system). However, unless someone intends to fiddle with the disk ordering, one can continue with the default block device files safely.
+
+Let us take a look at how to write down the options for the /boot/ partition. This is just an example, and should be modified according to the partitioning decisions made earlier in the installation. In our amd64 partitioning example, /boot/ is usually the /dev/sda2 partition, with ext2 as filesystem. It needs to be checked during boot, so we would write down: 
+When auto is used in the third field, it makes the mount command guess what the filesystem would be. This is recommended for removable media as they can be created with one of many filesystems. The user option in the fourth field makes it possible for non-root users to mount the CD.
+
+To improve performance, most users would want to add the noatime mount option, which results in a faster system since access times aren't registered (those are not needed generally anyway). This is also recommended for solid state drive (SSD) users, who should also enable the discard mount option (ext4 and btrfs only for now) which makes the TRIM command work.
+
+Double-check the /etc/fstab file, save and quit to continue.
+Networking information
+Host and domain information
+
+One of the choices the user has to make is name his/her PC. This seems to be quite easy, but lots of users are having difficulties finding the appropriate name for their Linux PC. To speed things up, know that the decision is not final - it can be changed afterwards. In the examples below, the hostname tux is used within the domain homenetwork.
+root #nano -w /etc/conf.d/hostname
+
+# Set the hostname variable to the selected host name
+hostname="tux"
+
+Second, if a domain name is needed, set it in /etc/conf.d/net. This is only necessary if the ISP or network administrator says so, or if the network has a DNS server but not a DHCP server. Don't worry about DNS or domain names if the system uses DHCP for dynamic IP address allocation and network configuration.
+Note
+The /etc/conf.d/net file does not exist by default, so needs to be created.
+root #nano -w /etc/conf.d/net
+
+# Set the dns_domain_lo variable to the selected domain name
+dns_domain_lo="homenetwork"
+
+Note
+If no domain name is configured, then users will notice they get "This is hostname.(none)" messages at their login screen. This should then be fixed by editing /etc/issue and deleting the string .\O from that file.
+
+If a NIS domain is needed (users that do not know this will not need one), define that one too:
+root #nano -w /etc/conf.d/net
+
+# Set the nis_domain_lo variable to the selected NIS domain name
+nis_domain_lo="my-nisdomain"
+
+Note
+For more information on configuring DNS and NIS, please read the examples provided in /usr/share/doc/netifrc-*/net.example.bz2 which can be read using bzless. Also, it might be interesting to install net-dns/openresolv to help manage the DNS/NIS setup.
+Configuring the network
+
+During the Gentoo Linux installation, networking was already configured. However, that was for the installation CD itself and not for the installed environment. Right now, the network configuration is made for the installed Gentoo Linux system.
+Note
+More detailed information about networking, including advanced topics like bonding, bridging, 802.1Q VLANs or wireless networking is covered in the Gentoo Network Configuration section.
+
+All networking information is gathered in /etc/conf.d/net. It uses a straightforward yet perhaps not intuitive syntax. But don't fear, everything is explained below. A fully commented example that covers many different configurations is available in /usr/share/doc/netifrc-*/net.example.bz2.
+
+First install net-misc/netifrc:
+root #emerge --ask --noreplace net-misc/netifrc
+
+DHCP is used by default. For DHCP to work, a DHCP client needs to be installed. This is described later in Installing Necessary System Tools.
+
+If the network connection needs to be configured because of specific DHCP options or because DHCP is not used at all, then open /etc/conf.d/net:
+root #nano -w /etc/conf.d/net
+
+Set both config_eth0 and routes_eth0 to enter IP address information and routing information:
+Note
+This assumes that the network interface will be called eth0. This is, however, very system dependent. It is recommended to assume that the interface is named the same as the interface name when booted from the installation media if the installation media is sufficiently recent. More information can be found in Network Interface Naming.
+FILE /etc/conf.d/netStatic IP definition
+
+config_eth0="192.168.0.2 netmask 255.255.255.0 brd 192.168.0.255"
+routes_eth0="default via 192.168.0.1"
+
+To use DHCP, define config_eth0:
+FILE /etc/conf.d/netDHCP definition
+
+config_eth0="dhcp"
+
+Please read /usr/share/doc/netifrc-*/net.example.bz2 for a list of all available options. Be sure to also read up on the DHCP client man page if specific DHCP options need to be set.
+
+If the system has several network interfaces, then repeat the above steps for config_eth1, config_eth2, etc.
+
+Now save the configuration and exit to continue.
+Automatically start networking at boot
+
+To have the network interfaces activated at boot, they need to be added to the default runlevel.
+root #cd /etc/init.d
+root #ln -s net.lo net.eth0
+root #rc-update add net.eth0 default
+
+If the system has several network interfaces, then the appropriate net.* files need to be created just like we did with net.eth0.
+
+If after booting the system we find out that the assumption about the network interface name (which is currently documented as eth0) was wrong, then execute the following steps to rectify this:
+
+    Update the /etc/conf.d/net file with the correct interface name (like enp3s0 instead of eth0).
+    Create new symbolic link (like /etc/init.d/net.enp3s0).
+    Remove the old symbolic link (rm /etc/init.d/net.eth0).
+    Add the new one to the default runlevel.
+    Remove the old one using rc-update del net.eth0 default.
+
+The hosts file
+
+Next inform Linux about the network environment. This is defined in /etc/hosts and helps in resolving host names to IP addresses for hosts that aren't resolved by the nameserver.
+root #nano -w /etc/hosts
+FILE /etc/hostsFilling in the networking information
+
+# This defines the current system and must be set
+127.0.0.1     tux.homenetwork tux localhost
+  
+# Optional definition of extra systems on the network
+192.168.0.5   jenny.homenetwork jenny
+192.168.0.6   benny.homenetwork benny
+
+Save and exit the editor to continue.
+Optional: Get PCMCIA working
+
+PCMCIA users should now install the sys-apps/pcmciautils package.
+root #emerge --ask sys-apps/pcmciautils
+System information
+Root password
+
+Set the root password using the passwd command.
+root #passwd
+
+The root Linux account is an all-powerful account, so pick a strong password. Later an additional regular user account will be created for daily operations.
+Init and boot configuration
+
+Gentoo (at least when using OpenRC) uses /etc/rc.conf to configure the services, startup, and shutdown of a system. Open up /etc/rc.conf and enjoy all the comments in the file. Review the settings and change where needed.
+root #nano -w /etc/rc.conf
+
+Next, open /etc/conf.d/keymaps to handle keyboard configuration. Edit it to configure and select the right keyboard.
+root #nano -w /etc/conf.d/keymaps
+
+Take special care with the keymap variable. If the wrong keymap is selected, then weird results will come up when typing on the keyboard.
+
+Finally, edit /etc/conf.d/hwclock to set the clock options. Edit it according to personal preference.
+root #nano -w /etc/conf.d/hwclock
+
+If the hardware clock is not using UTC, then it is necessary to set clock="local" in the file. Otherwise the system might show clock skew behavior.
+
+
+
+
+
+
+System logger
+
+Some tools are missing from the stage3 archive because several packages provide the same functionality. It is now up to the user to choose which ones to install.
+
+The first tool to decide on has to provide logging facilities for the system. Unix and Linux have an excellent history of logging capabilities - if needed, everything that happens on the system can be logged in log files. This happens through the system logger.
+
+Gentoo offers several system logger utilities. A few of these include:
+
+    app-admin/sysklogd - Offers the traditional set of system logging daemons. The default logging configuration works well out of the box which makes this package a good option for beginners.
+    app-admin/syslog-ng - An advanced system logger. Requires additional configuration for anything beyond logging to one big file. More advanced users may choose this package based on it's logging potential; be aware additional configuration is a necessity for any kind of smart logging.
+    app-admin/metalog - A highly-configurable system logger.
+
+Others are available through Portage as well - the number of available packages increases on a daily basis.
+
+If sysklogd or syslog-ng are going to be used, it is recommended to install app-admin/logrotate afterwards as those system loggers don't provide any rotation mechanism for the log files.
+
+To install the system logger of choice, emerge it and have it added to the default runlevel using rc-update. The following example installs app-admin/sysklogd:
+root #emerge --ask app-admin/sysklogd
+root #rc-update add sysklogd default
+Optional: Cron daemon
+
+Next is the cron daemon. Although it is optional and not required for every system, it is wise to install one.
+
+A cron daemon executes scheduled commands. It is very handy if some command needs to be executed regularly (for instance daily, weekly or monthly).
+
+Gentoo offers several possible cron daemons, including sys-process/bcron, sys-process/dcron, sys-process/fcron, and sys-process/cronie. Installing one of them is similar to installing a system logger. The following example uses sys-process/cronie:
+root #emerge --ask sys-process/cronie
+root #rc-update add cronie default
+
+If dcron or fcron are used, an additional initialization command needs to be executed:
+root #crontab /etc/crontab
+Optional: File indexing
+
+In order to index the file system to provide faster file location capabilities, install sys-apps/mlocate.
+root #emerge --ask sys-apps/mlocate
+Optional: Remote access
+
+To be able to access the system remotely after installation, add the sshd init script to the default runlevel:
+root #rc-update add sshd default
+
+If serial console access is needed (which is possible in case of remote servers), uncomment the serial console section in /etc/inittab:
+root #nano -w /etc/inittab
+
+# SERIAL CONSOLES
+s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100
+s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100
+
+Filesystem tools
+
+Depending on the filesystems used, it is necessary to install the necessary file system utilities (for checking the filesystem integrity, creating additional file systems etc.). Note that tools for managing ext2, ext3, or ext4 filesystems (sys-fs/e2fsprogs) are already installed as a part of the @system set.
+
+The following table lists the tools to install if a certain filesystem is used:
+Filesystem  Package
+Ext2, 3, and 4  sys-fs/e2fsprogs
+XFS     sys-fs/xfsprogs
+ReiserFS    sys-fs/reiserfsprogs
+JFS     sys-fs/jfsutils
+VFAT (FAT32, ...)   sys-fs/dosfstools
+Btrfs   sys-fs/btrfs-progs
+Tip
+For more information on filesystems in Gentoo see the filesystem article.
+Networking tools
+
+If there is no need for any additional networking tools, continue immediately with the section on Configuring a bootloader.
+Installing a DHCP client
+Important
+Although optional, the majority of users will find that they need a DHCP client to connect to the DHCP server on their network. Please take this opportunity to install a DHCP client. If this step is forgotten, then the system might not be able to get on the network thus making it impossible to download a DHCP client afterward.
+
+In order for the system to automatically obtain an IP address for one or more network interface(s) using netifrc scripts, it is necessary to install a DHCP client. We recommend the use of net-misc/dhcpcd although many other DHCP clients are available through the Portage tree:
+root #emerge --ask net-misc/dhcpcd
+
+More information on dhcpcd can be found in the dhcpcd article.
+Optional: Installing a PPPoE client
+
+If PPP is used to connect to the internet, install the net-dialup/ppp package:
+root #emerge --ask net-dialup/ppp
+
+Now continue with Configuring the bootloader.
+
+
+
+
+
+
+
+Selecting a boot loader
+
+With the Linux kernel configured, system tools installed and configuration files edited, it is time to install the last important piece of a Linux installation: the boot loader.
+
+The boot loader is responsible for firing up the Linux kernel upon boot - without it, the system would not know how to proceed when the power button has been pressed.
+
+For amd64, we document how to configure either GRUB2 or LILO for BIOS based systems, and GRUB2 or efibootmgr for UEFI systems.
+Default: Using GRUB2
+
+Previously, Gentoo Linux used what is now called GRUB Legacy as the recommended boot loader. As the name implies, the older GRUB package is no longer actively maintained and has been superseded by GRUB2. For more information about the legacy GRUB, please refer to its GRUB article on the Gentoo Wiki.
+Installing GRUB2
+
+GRUB2 is provided through the sys-boot/grub package.
+
+    When using BIOS:
+
+    root #emerge --ask sys-boot/grub:2
+
+    When using UEFI, users will need to add GRUB_PLATFORMS="efi-64" to make.conf before emerging GRUB2 so that the package will be built with EFI functionality:
+
+    root #echo GRUB_PLATFORMS="efi-64" >> /etc/portage/make.conf
+
+    root #emerge --ask sys-boot/grub:2
+
+    If GRUB2 was somehow emerged without first adding GRUB_PLATFORMS="efi-64" to make.conf the line (as shown above) can be added then and dependencies for the world package set re-calculated by passing the --update --newuse options to emerge:
+
+    root #emerge --ask --update --newuse --verbose sys-boot/grub:2
+
+The GRUB2 software is now installed on the system, but not activated yet.
+Configuring GRUB2
+
+Next, install the necessary GRUB2 files to the /boot/grub/ directory via the grub-install command. Presuming the first disk (the one where the system boots from) is /dev/sda, one of the following commands will do:
+
+    When using BIOS:
+
+    root #grub-install /dev/sda
+
+    When using UEFI:
+
+    root #grub-install --target=x86_64-efi --efi-directory=/boot
+
+    Note
+    Modify the efi-directory setting to the root of the vfat EFI System Partition. This is necessary if the /boot partition was not formatted as vfat.
+
+    Important
+    Make sure the EFI system partition has been mounted before running grub-install. It is possible for grub-install to install the GRUB EFI file (grubx64.efi) into the wrong directory without providing indication the wrong directory was used.
+
+Next, generate the GRUB2 configuration based on the user configuration specified in the /etc/default/grub file and /etc/grub.d scripts. In most cases, no configuration is needed by users as GRUB2 will automatically detect which kernel to boot (the highest one available in /boot/) and what the root file system is.
+
+To generate the final GRUB2 configuration, run the grub-mkconfig command:
+root #grub-mkconfig -o /boot/grub/grub.cfg
+
+Generating grub.cfg ...
+Found linux image: /boot/vmlinuz-3.16.5-gentoo
+Found initrd image: /boot/initramfs-genkernel-amd64-3.16.5-gentoo
+done
+
+The output of the command must mention that at least one Linux image is found, as those are needed to boot the system. If an initramfs is used or genkernel was used to build the kernel, the correct initrd image should be detected as well. If this is not the case, go to /boot/ and check the contents using the ls command. If the files are indeed missing, go back to the kernel configuration and installation instructions.
+Alternative: Using LILO
+Installing LILO
+
+LILO, the LInuxLOader, is the tried and true workhorse of Linux boot loaders. However, it lacks some features that GRUB has. The reason why LILO is still used is that, on some systems, GRUB doesn't work and LILO does. Of course, it is also used because some people know LILO and want to stick with it. Either way, Gentoo supports both.
+
+Installing LILO is a breeze; just use emerge.
+root #emerge --ask sys-boot/lilo
+Configuring LILO
+
+To configure LILO, first create /etc/lilo.conf:
+root #nano -w /etc/lilo.conf
+
+In the configuration file, sections are used to refer to the bootable kernel. Make sure that the kernel files (with kernel version) and initramfs files are known, as they need to be referred to in this configuration file.
+Note
+If the root filesystem is JFS, add an append="ro" line after each boot item since JFS needs to replay its log before it allows read-write mounting.
+FILE /etc/lilo.confExample LILO configuration
+
+boot=/dev/sda             # Install LILO in the MBR
+prompt                    # Give the user the chance to select another section
+timeout=50                # Wait 5 (five) seconds before booting the default section
+default=gentoo            # When the timeout has passed, boot the "gentoo" section
+  
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo            # Name we give to this section
+  read-only               # Start with a read-only root. Do not alter!
+  root=/dev/sda4          # Location of the root filesystem
+  
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo.rescue     # Name we give to this section
+  read-only               # Start with a read-only root. Do not alter!
+  root=/dev/sda4         # Location of the root filesystem
+  append="init=/bin/bb"   # Launch the Gentoo static rescue shell
+  
+# The next two lines are for dual booting with a Windows system.
+# In this example, Windows is hosted on /dev/sda6.
+other=/dev/sda6
+  label=windows
+
+
+Note
+If a different partitioning scheme and/or kernel image is used, adjust accordingly.
+
+If an initramfs is necessary, then change the configuration by referring to this initramfs file and telling the initramfs where the root device is located:
+FILE /etc/lilo.confAdding initramfs information to a boot entry
+
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo
+  read-only
+  append="root=/dev/sda4"
+  initrd=/boot/initramfs-genkernel-amd64-3.16.5-gentoo
+
+
+If additional options need to be passed to the kernel, use an append statement. For instance, to add the video statement to enable framebuffer:
+FILE /etc/lilo.confAdding video parameter to the boot options
+
+image=/boot/vmlinuz-3.16.5-gentoo
+  label=gentoo
+  read-only
+  root=/dev/sda4
+  append="video=uvesafb:mtrr,ywrap,1024x768-32@85"
+
+
+Users that used genkernel should know that their kernels use the same boot options as is used for the installation CD. For instance, if SCSI device support needs to be enabled, add doscsi as kernel option.
+
+Now save the file and exit.
+
+To finish up, run /sbin/lilo so LILO can apply the /etc/lilo.conf settings to the system (I.E. install itself on the disk). Keep in mind that /sbin/lilo must be executed each time a new kernel is installed or a change has been made to the lilo.conf file in order for the system to boot if the filename of the kernel has changed.
+root #/sbin/lilo
+Alternative: Using efibootmgr
+
+On UEFI based systems, the UEFI firmware on the system (in other words the primary bootloader), can be directly manipulated to look for UEFI boot entries. Such systems do not need to have additional (also known as secondary) bootloaders like GRUB2 in order to help boot the system. With that being said, the reason EFI-based bootloaders such as GRUB2 exist is to extend the functionality of UEFI systems during the boot process. Using efibootmgr is really for those who desire to take a minimalist (although more rigid) approach to booting their system; using GRUB2 (see above) is easier for the majority of users because it offers a flexible approach when booting UEFI systems.
+
+Remember sys-boot/efibootmgr application is not a bootloader; it is a tool to interact with the UEFI firmware and update its settings, so that the Linux kernel that was previously installed can be booted with additional options (if necessary), or to allow multiple boot entries. This interaction is done through the EFI variables (hence the need for kernel support of EFI vars).
+
+Be sure to read though the EFI stub kernel article before continuing. The kernel must have specific options enabled to be directly bootable by the system's UEFI firmware. It might be necessary to recompile the kernel. It is also a good idea to take a look at the efibootmgr article.
+Note
+To reiterate, efibootmgr is not a requirement to boot an UEFI system. The Linux kernel itself can be booted immediately, and additional kernel command-line options can be built-in to the Linux kernel (there is a kernel configuration option called that allows the user to specify boot parameters as command-line options. Even an initramfs can be 'built-in' to the kernel.
+
+Those that have decided to take this approach must install the software:
+root #emerge --ask sys-boot/efibootmgr
+
+Then, create the /boot/efi/boot/ location, and then copy the kernel into this location, calling it bootx64.efi:
+root #mkdir -p /boot/efi/boot
+root #cp /boot/vmlinuz-* /boot/efi/boot/bootx64.efi
+
+Next, tell the UEFI firmware that a boot entry called "Gentoo" is to be created, which has the freshly compiled EFI stub kernel:
+root #efibootmgr --create --disk /dev/sda --part 2 --label "Gentoo" --loader "\efi\boot\bootx64.efi"
+
+If an initial RAM file system (initramfs) is used, add the proper boot option to it:
+root #efibootmgr -c -d /dev/sda -p 2 -L "Gentoo" -l "\efi\boot\bootx64.efi" initrd='\initramfs-genkernel-amd64-3.16.5-gentoo'
+Note
+The use of \ as directory separator is mandatory when using UEFI definitions.
+
+With these changes done, when the system reboots, a boot entry called "Gentoo" will be available.
+
+
+Rebooting the system
+
+Exit the chrooted environment and unmount all mounted partitions. Then type in that one magical command that initiates the final, true test: reboot.
+root #exit
+cdimage ~#cd
+cdimage ~#umount -l /mnt/gentoo/dev{/shm,/pts,}
+cdimage ~#umount /mnt/gentoo{/boot,/sys,/proc,}
+cdimage ~#reboot
+
+Of course, don't forget to remove the bootable CD, otherwise the CD might be booted again instead of the new Gentoo system.
+
+Once rebooted in the freshly installed Gentoo environment, finish up with Finalizing the Gentoo installation.
+
+
+
+
+
+
+User administration
+Adding a user for daily use
+
+Working as root on a Unix/Linux system is dangerous and should be avoided as much as possible. Therefore it is strongly recommended to add a user for day-to-day use.
+
+The groups the user is member of define what activities the user can perform. The following table lists a number of important groups:
+Group   Description
+audio   Be able to access the audio devices.
+cdrom   Be able to directly access optical devices.
+floppy  Be able to directly access floppy devices.
+games   Be able to play games.
+portage     Be able to access portage restricted resources.
+usb     Be able to access USB devices.
+video   Be able to access video capturing hardware and doing hardware acceleration.
+wheel   Be able to use su.
+
+For instance, to create a user called larry who is member of the wheel, users, and audio groups, log in as root first (only root can create users) and run useradd:
+Login:root
+
+Password: (Enter the root password)
+
+root #useradd -m -G users,wheel,audio -s /bin/bash larry
+root #passwd larry
+
+Password: (Enter the password for larry)
+Re-enter password: (Re-enter the password to verify)
+
+If a user ever needs to perform some task as root, they can use su - to temporarily receive root privileges. Another way is to use the sudo package which is, if correctly configured, very secure.
+Disk cleanup
+Removing tarballs
+
+With the Gentoo installation finished and the system rebooted, if everything has gone well, we can now remove the downloaded stage3 tarball from the hard disk. Remember that they were downloaded to the / directory.
+root #rm /stage3-*.tar.bz2*
+Where to go from here
+Documentation
+
+Where to go from here? What are the options now? What to explore first? Gentoo provides its users with lots of possibilities, and therefore lots of documented (and less documented) features.
+
+Definitely take a look at the next part of the Gentoo Handbook entitled Working with Gentoo which explains how to keep the software up to date, how to install more software, what USE flags are, how the Gentoo init system works, etc.
+
+Apart from the handbook, you should also feel encouraged to explore other corners of the Gentoo Wiki to find additional, community-provided documentation. The Gentoo documentation team also offers a Documentation overview which lists a fine selection of Wiki articles. For instance, it refers to the localization guide to make a system feel more at home.
+Gentoo online
+
+Everyone is of course always welcome on our Gentoo forums or on one of our many Gentoo IRC channels.
+
+We also have several mailing lists open to all our users. Information on how to join is contained in that page.
+
+Enjoy your installation! :)
+
+
+Introduction
+Welcome
+
+First of all, welcome to Gentoo. You are about to enter the world of choices and performance. Gentoo is all about choices. When installing Gentoo, this is made clear several times - users can choose how much they want to compile themselves, how to install Gentoo, what system logger to use, etc.
+
+Gentoo is a fast, modern meta-distribution with a clean and flexible design. Gentoo is built around free software and doesn't hide from its users what is beneath the hood. Portage, the package maintenance system which Gentoo uses, is written in Python, meaning the user can easily view and modify the source code. Gentoo's packaging system uses source code (although support for precompiled packages is included too) and configuring Gentoo happens through regular text files. In other words, openness everywhere.
+
+It is very important that everybody understands that choices are what makes Gentoo run. We try not to force users into anything they don't like. If anyone believes otherwise, please bug report it.
+How is the installation structured
+
+The Gentoo Installation can be seen as a 10-step procedure, corresponding to the next set of chapters. Each step results in a certain state:
+Step    Result
+1   The user is in a working environment ready to install Gentoo.
+2   The Internet connection is ready to install Gentoo.
+3   The hard disks are initialized to host the Gentoo installation.
+4   The installation environment is prepared and the user is ready to chroot into the new environment.
+5   Core packages, which are the same on all Gentoo installations, are installed.
+6   The Linux kernel is installed.
+7   The user will have configured most of the Gentoo system configuration files.
+8   The necessary system tools are installed.
+9   The proper boot loader has been installed and configured.
+10  The freshly installed Gentoo Linux environment is ready to be explored.
+
+Whenever a certain choice is presented the handbook will try to explain the pros and cons of each choice. Although the text then continues with a default choice (identified by "Default: " in the title), the other possibilities will be documented as well (marked by "Alternative: " in the title). Do not think that the default is what Gentoo recommends. It is however what Gentoo believes most users will use.
+
+Sometimes an optional step can be followed. Such steps are marked as "Optional: " and are therefore not needed to install Gentoo. However, some optional steps are dependent on a previously made decision. The instructions will inform the reader when this happens, both when the decision is made, and right before the optional step is described.
+What are the options
+
+Gentoo can be installed in many different ways. It can be downloaded and installed from one of Gentoo's Installation CDs, from a distribution already installed, from a non-Gentoo bootable CD (such as Knoppix), from a netbooted environment, from a rescue floppy, etc.
+
+This document covers the installation using a Gentoo Installation CD or, in certain cases, netbooting.
+Note
+For help on the other installation approaches, including using non-Gentoo CDs, please read our Alternative installation guide.
+
+We also provide a Gentoo installation tips and tricks document that might be useful to read as well.
+Troubles
+
+If a problem is found in the installation (or in the installation documentation), please visit our bug tracking system and check if the bug is known. If not, please create a bug report for it so we can take care of it. Do not be afraid of the developers who are assigned to the bugs - they (generally) don't eat people.
+
+Note though that, although this document is architecture-specific, it might contain references to other architectures as well. This is due to the fact that large parts of the Gentoo Handbook use source code that is common for all architectures (to avoid duplication of efforts and starvation of development resources). We will try to keep this to a minimum to avoid confusion.
+
+If there is some uncertainty whether or not the problem is a user-problem (some error made despite having read the documentation carefully) or a software-problem (some error we made despite having tested the installation/documentation carefully) everybody is welcome to join #gentoo on irc.freenode.net. Of course, everyone is welcome otherwise too as our chat channel covers the broad Gentoo spectrum.
+
+Speaking of which, if there are any additional questions regarding Gentoo, check out the Frequently Asked Questions article. There are also FAQs on the Gentoo Forums.
+
+
+
+
+
+
+Hardware requirements
+
+Before we start, we first list what hardware requirements are needed to successfully install Gentoo on a amd64 box.
+
+
+    Minimal CD  LiveDVD
+CPU     Any AMD64 CPU or EM64T CPU (Core 2 Duo & Quad processors are EM64T)
+Memory  256 MB  512 MB
+Disk space  2.5 GB (excluding swap space)
+Swap space  At least 256 MB
+
+The Gentoo AMD64 project page is a good place to be for more information about Gentoo's amd64 support.
+
+
+Gentoo Linux installation CD
+Minimal installation CD
+
+The Gentoo minimal installation CD is a bootable CD which contains a self-sustained Gentoo environment. It allows the user to boot Linux from the CD. During the boot process the hardware is detected and the appropriate drivers are loaded. The CD is maintained by Gentoo developers and allows anyone to install Gentoo if an active Internet connection is available.
+
+The Minimal Installation CD is called install-amd64-minimal-<release>.iso.
+The occasional Gentoo LiveDVD
+
+Occasionally, a special DVD is crafted by the Gentoo Ten project which can be used to install Gentoo. The instructions further down this chapter target the Minimal Installation CD so might be a bit different. However, the LiveDVD (or any other bootable Linux environment) supports getting a root prompt by just invoking sudo su - or sudo -i in a terminal.
+What are stages then?
+
+A stage3 tarball is an archive containing a minimal Gentoo environment, suitable to continue the Gentoo installation using the instructions in this manual. Previously, the Gentoo Handbook described the installation using one of three stage tarballs. While Gentoo still offers stage1 and stage2 tarballs, the official installation method uses the stage3 tarball. If you are interested in performing a Gentoo installation using a stage1 or stage2 tarball, please read the Gentoo FAQ on How do I install Gentoo using a stage1 or stage2 tarball?
+
+Stage3 tarballs can be downloaded from releases/amd64/autobuilds/ on any of the official Gentoo mirrors. Stage files update frequently and are not included on the installation CDs.
+Downloading and burning the CD
+Download the media
+
+The default installation media that Gentoo Linux uses are the minimal installation CDs, which host a bootable, very small Gentoo Linux environment with the right tools to install Gentoo Linux from. The CD images themselves can be downloaded from the downloads page (recommended) or by manually browsing to the ISO location on one of the many available mirrors.
+
+If downloading from a mirror, the minimal installation CDs can be found as follows:
+
+    Go to the releases/ directory.
+    Select the directory for the relevant target architecture (such as amd64/).
+    Select the autobuilds/ directory.
+    For amd64 and x86 architectures select either the current-install-amd64-minimal/ or current-install-x86-minimal/ directory (respectively). For all other architectures navigate to the current-iso/ directory.
+
+Note
+Some target architectures such as arm, mips, and s390 will not have minimal install CDs. At this time the Gentoo Release Engineering project does not support building .iso files for these targets.
+
+Inside this location, the installation CD file is the file with the .iso suffix. For instance, take a look at the following listing:
+CODE Example list of downloadable files at releases/amd64/autobuilds/current-iso/
+
+[DIR] hardened/                                          05-Dec-2014 01:42    -   
+[   ] install-amd64-minimal-20141204.iso                 04-Dec-2014 21:04  208M  
+[   ] install-amd64-minimal-20141204.iso.CONTENTS        04-Dec-2014 21:04  3.0K  
+[   ] install-amd64-minimal-20141204.iso.DIGESTS         04-Dec-2014 21:04  740   
+[TXT] install-amd64-minimal-20141204.iso.DIGESTS.asc     05-Dec-2014 01:42  1.6K  
+[   ] stage3-amd64-20141204.tar.bz2                      04-Dec-2014 21:04  198M  
+[   ] stage3-amd64-20141204.tar.bz2.CONTENTS             04-Dec-2014 21:04  4.6M  
+[   ] stage3-amd64-20141204.tar.bz2.DIGESTS              04-Dec-2014 21:04  720   
+[TXT] stage3-amd64-20141204.tar.bz2.DIGESTS.asc          05-Dec-2014 01:42  1.5K
+
+In the above example, the install-amd64-minimal-20141204.iso file is the minimal installation CD itself. But as can be seen, other related files exist as well:
+
+    A .CONTENTS file which is a text file listing all files available on the installation CD. This file can be useful to verify if particular firmware or drivers are available on the installation CD before downloading it.
+    A .DIGESTS file which contains the hash of the ISO file itself, in various hashing formats/algorithms. This file can be used to verify if the downloaded ISO file is corrupt or not.
+    A .DIGESTS.asc file which not only contains the hash of the ISO file (like the .DIGESTS file), but also a cryptographic signature of that file. This can be used to both verify if the downloaded ISO file is corrupt or not, as well as verify that the download is indeed provided by the Gentoo Release Engineering team and has not been tampered with.
+
+Ignore the other files available at this location for now - those will come back when the installation has proceeded further. Download the .iso file and, if verification of the download is wanted, download the .DIGESTS.asc file for the .iso file as well. The .CONTENTS file does not need to be downloaded as the installation instructions will not refer to this file anymore, and the .DIGESTS file should contain the same information as the .DIGESTS.asc file, except that the latter also contains a signature on top of it.
+Verifying the downloaded files
+Note
+This is an optional step and not necessary to install Gentoo Linux. However, it is recommended as it ensures that the downloaded file is not corrupt and has indeed been provided by the Gentoo Infrastructure team.
+
+Through the .DIGESTS and .DIGESTS.asc files, the validity of the ISO file can be confirmed using the right set of tools. This verification is usually done in two steps:
+
+    First, the cryptographic signature is validated to make sure that the installation file is provided by the Gentoo Release Engineering team
+    If the cryptographic signature validates, then the checksum is verified to make sure that the downloaded file itself is not corrupted
+
+Microsoft Windows based verification
+
+On a Microsoft Windows system, chances are low that the right set of tools to verify checksums and cryptographic signatures are in place.
+
+To first verify the cryptographic signature, tools such as GPG4Win can be used. After installation, the public keys of the Gentoo Release Engineering team need to be imported. The list of keys is available on the signatures page. Once imported, the user can then verify the signature of the .DIGESTS.asc file.
+Important
+This does not verify that the .DIGESTS file is correct, only that the .DIGESTS.asc file is. That also implies that the checksum should be verified against the values in the .DIGESTS.asc file, which is why the instructions above only refer to downloading the .DIGESTS.asc file.
+
+The checksum itself can be verified using the Hashcalc application, although many others exist as well. Most of the time, these tools will show the user the calculated checksum, and the user is requested to verify this checksum with the value that is inside the .DIGESTS.asc file.
+Linux based verification
+
+On a Linux system, the most common method for verifying the cryptographic signature is to use the app-crypt/gnupg software. With this package installed, the following commands can be used to verify the cryptographic signature of the .DIGESTS.asc file.
+
+First, download the right set of keys as made available on the signatures page:
+user $gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0xBB572E0E2D182910
+
+gpg: requesting key 0xBB572E0E2D182910 from hkp server pool.sks-keyservers.net
+gpg: key 0xBB572E0E2D182910: "Gentoo Linux Release Engineering (Automated Weekly Release Key) <releng@gentoo.org>" 1 new signature
+gpg: 3 marginal(s) needed, 1 complete(s) needed, classic trust model
+gpg: depth: 0  valid:   3  signed:  20  trust: 0-, 0q, 0n, 0m, 0f, 3u
+gpg: depth: 1  valid:  20  signed:  12  trust: 9-, 0q, 0n, 9m, 2f, 0u
+gpg: next trustdb check due at 2018-09-15
+gpg: Total number processed: 1
+gpg:         new signatures: 1
+
+Next verify the cryptographic signature of the .DIGESTS.asc file:
+user $gpg --verify install-amd64-minimal-20141204.iso.DIGESTS.asc
+
+gpg: Signature made Fri 05 Dec 2014 02:42:44 AM CET
+gpg:                using RSA key 0xBB572E0E2D182910
+gpg: Good signature from "Gentoo Linux Release Engineering (Automated Weekly Release Key) <releng@gentoo.org>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 13EB BDBE DE7A 1277 5DFD  B1BA BB57 2E0E 2D18 2910
+
+To be absolutely certain that everything is valid, verify the fingerprint shown with the fingerprint on the Gentoo signatures page.
+
+With the cryptographic signature validated, next verify the checksum to make sure the downloaded ISO file is not corrupted. The .DIGESTS.asc file contains multiple hashing algorithms, so one of the methods to validate the right one is to first look at the checksum registered in the .DIGESTS.asc file. For instance, to get the SHA512 checksum:
+user $grep -A 1 -i sha512 install-amd64-minimal-20141204.iso.DIGESTS.asc
+
+# SHA512 HASH
+364d32c4f8420605f8a9fa3a0fc55864d5b0d1af11aa62b7a4d4699a427e5144b2d918225dfb7c5dec8d3f0fe2cddb7cc306da6f0cef4f01abec33eec74f3024  install-amd64-minimal-20141204.iso
+--
+# SHA512 HASH
+0719a8954dc7432750de2e3076c8b843a2c79f5e60defe43fcca8c32ab26681dfb9898b102e211174a895ff4c8c41ddd9e9a00ad6434d36c68d74bd02f19b57f  install-amd64-minimal-20141204.iso.CONTENTS
+
+In the above output, two SHA512 checksums are shown - one for the install-amd64-minimal-20141204.iso file and one for its accompanying .CONTENTS file. Only the first checksum is of interest, as it needs to be compared with the calculated SHA512 checksum which can be generated as follows:
+user $sha512sum install-amd64-minimal-20141204.iso
+
+364d32c4f8420605f8a9fa3a0fc55864d5b0d1af11aa62b7a4d4699a427e5144b2d918225dfb7c5dec8d3f0fe2cddb7cc306da6f0cef4f01abec33eec74f3024  install-amd64-minimal-20141204.iso
+
+As both checksums match, the file is not corrupted and the installation can continue.
+Burning
+
+Of course, with just an ISO file downloaded, the Gentoo Linux installation cannot be started. The ISO file needs to be burned on a CD to boot from, and in such a way that its content is burned on the CD, not just the file itself. Below a few common methods are described - a more elaborate set of instructions can be found in Our FAQ on burning an ISO file.
+Burning with Microsoft Windows
+
+On Microsoft Windows, a number of tools exist that support burning ISOs on CDs.
+
+    With EasyCD Creator, select File, Record CD from CD image. Then change the Files of type to ISO image file. Then locate the ISO file and click Open. After clicking on Start recording the ISO image will be burned correctly onto the CD-R.
+    With Nero Burning ROM, cancel the wizard which automatically pops up and select Burn Image from the File menu. Select the image to burn and click Open. Now hit the Burn button and watch the brand new CD being burnt.
+
+Burning with Linux
+
+On Linux, the ISO file can be burned on a CD using the cdrecord command, part of the app-cdr/cdrtools package.
+
+For instance, to burn the ISO file on the CD in the /dev/sr0 device (this is the first CD device on the system - substitute with the right device file if necessary):
+user $cdrecord dev=/dev/sr0 install-amd64-minimal-20141204.iso
+
+Users that prefer a graphical user interface can use K3B, part of the app-cdr/k3b package. In K3B, go to Tools and use Burn CD Image. Then follow the instructions provided by K3B.
+Booting the CD
+Booting the installation media
+
+Once the installation CD is burned, it is time to boot it. Remove all external bootable media from the system (including any CD/DVD disks or USB drives), reboot the system, and enter the motherboard's firmware user interface. This is usually performed by pressing a keyboard key such as DEL, F1, F10, or ESC during the Power-On Self-test (POST) process. The 'trigger' key varies depending on the system and motherboard. If it is not obvious use an internet search engine and do some research using the motherboard's model name as the search keyword. Results should be easy to determine. Once inside the motherboard's firmware menu, change the boot order so that the external bootable media (CD/DVD disks or USB drives) are tried before the internal disk devices. Without this change, the system will most likely reboot to the internal disk device, ignoring the external boot media.
+Important
+When installing Gentoo with the purpose of using the UEFI interface instead of BIOS, it is recommended to boot with UEFI immediately. If not, then it might be necessary to create a bootable UEFI USB stick (or other medium) once before finalizing the Gentoo Linux installation.
+
+Now place the installation CD in the CD-ROM drive and reboot. A boot prompt should be shown. At this screen, Enter will begin the boot process with the default boot options. To boot the installation CD with custom boot options, specify a kernel followed by boot options and then hit Enter.
+
+At the boot prompt, users get the option of displaying the available kernels (F1) and boot options (F2). If no choice is made within 15 seconds (either displaying information or using a kernel) then the installation CD will fall back to booting from disk. This allows installations to reboot and try out their installed environment without the need to remove the CD from the tray (something well appreciated for remote installations).
+
+We mentioned specifying a kernel. On the installation CD, several kernels are provided. The default one is called gentoo. Other kernels are for specific hardware needs and the -nofb variants disable framebuffer support.
+
+The next table gives a short overview of the available kernels.
+Kernel  Description
+gentoo  Default kernel with support for K8 CPUs (including NUMA support) and EM64T CPUs
+gentoo-nofb     Same as gentoo but without framebuffer support
+memtest86   Test the local RAM for errors
+
+Alongside the kernel, boot options help in tuning the boot process further.
+Hardware options
+acpi=on     This loads support for ACPI and also causes the acpid daemon to be started by the CD on boot. This is only needed if the system requires ACPI to function properly. This is not required for Hyperthreading support.
+acpi=off    Completely disables ACPI. This is useful on some older systems and is also a requirement for using APM. This will disable any Hyperthreading support of your processor.
+console=X   This sets up serial console access for the CD. The first option is the device, usually ttyS0 on x86, followed by any connection options, which are comma separated. The default options are 9600,8,n,1.
+dmraid=X    This allows for passing options to the device-mapper RAID subsystem. Options should be encapsulated in quotes.
+doapm   This loads APM driver support. This also requires that acpi=off.
+dopcmcia    This loads support for PCMCIA and Cardbus hardware and also causes the pcmcia cardmgr to be started by the CD on boot. This is only required when booting from PCMCIA/Cardbus devices.
+doscsi  This loads support for most SCSI controllers. This is also a requirement for booting most USB devices, as they use the SCSI subsystem of the kernel.
+sda=stroke  This allows the user to partition the whole hard disk even when the BIOS is unable to handle large disks. This option is only used on machines with an older BIOS. Replace sda with the device that requires this option.
+ide=nodma   This forces the disabling of DMA in the kernel and is required by some IDE chipsets and also by some CDROM drives. If the system is having trouble reading from the IDE CDROM, try this option. This also disables the default hdparm settings from being executed.
+noapic  This disables the Advanced Programmable Interrupt Controller that is present on newer motherboards. It has been known to cause some problems on older hardware.
+nodetect    This disables all of the autodetection done by the CD, including device autodetection and DHCP probing. This is useful for doing debugging of a failing CD or driver.
+nodhcp  This disables DHCP probing on detected network cards. This is useful on networks with only static addresses.
+nodmraid    Disables support for device-mapper RAID, such as that used for on-board IDE/SATA RAID controllers.
+nofirewire  This disables the loading of Firewire modules. This should only be necessary if your Firewire hardware is causing a problem with booting the CD.
+nogpm   This disables gpm console mouse support.
+nohotplug   This disables the loading of the hotplug and coldplug init scripts at boot. This is useful for doing debugging of a failing CD or driver.
+nokeymap    This disables the keymap selection used to select non-US keyboard layouts.
+nolapic     This disables the local APIC on Uniprocessor kernels.
+nosata  This disables the loading of Serial ATA modules. This is used if the system is having problems with the SATA subsystem.
+nosmp   This disables SMP, or Symmetric Multiprocessing, on SMP-enabled kernels. This is useful for debugging SMP-related issues with certain drivers and motherboards.
+nosound     This disables sound support and volume setting. This is useful for systems where sound support causes problems.
+nousb   This disables the autoloading of USB modules. This is useful for debugging USB issues.
+slowusb     This adds some extra pauses into the boot process for slow USB CDROMs, like in the IBM BladeCenter.
+Logical volume/device management
+dolvm   This enables support for Linux's Logical Volume Management.
+Other options
+debug   Enables debugging code. This might get messy, as it displays a lot of data to the screen.
+docache     This caches the entire runtime portion of the CD into RAM, which allows the user to umount /mnt/cdrom and mount another CDROM. This option requires that there is at least twice as much available RAM as the size of the CD.
+doload=X    This causes the initial ramdisk to load any module listed, as well as dependencies. Replace X with the module name. Multiple modules can be specified by a comma-separated list.
+dosshd  Starts sshd on boot, which is useful for unattended installs.
+passwd=foo  Sets whatever follows the equals as the root password, which is required for dosshd since the root password is by default scrambled.
+noload=X    This causes the initial ramdisk to skip the loading of a specific module that may be causing a problem. Syntax matches that of doload.
+nonfs   Disables the starting of portmap/nfsmount on boot.
+nox     This causes an X-enabled LiveCD to not automatically start X, but rather, to drop to the command line instead.
+scandelay   This causes the CD to pause for 10 seconds during certain portions the boot process to allow for devices that are slow to initialize to be ready for use.
+scandelay=X     This allows the user to specify a given delay, in seconds, to be added to certain portions of the boot process to allow for devices that are slow to initialize to be ready for use. Replace X with the number of seconds to pause.
+Note
+The CD will check for no* options before do* options, so that options can be overriden in the exact order specified.
+
+Now boot the CD, select a kernel (if the default gentoo kernel does not suffice) and boot options. As an example, we boot the gentoo kernel, with dopcmcia as a kernel parameter:
+boot:gentoo dopcmcia
+
+Next the user will be greeted with a boot screen and progress bar. If the installation is done on a system with a non-US keyboard, make sure to immediately press Alt + F1 to switch to verbose mode and follow the prompt. If no selection is made in 10 seconds the default (US keyboard) will be accepted and the boot process will continue. Once the boot process completes, the user is automatically logged in to the "Live" Gentoo Linux environment as the root user, the super user. A root prompt is displayed on the current console, and one can switch to other consoles by pressing Alt + F2, Alt + F3 and Alt + F4. Get back to the one started on by pressing Alt + F1.
+
+
+Extra hardware configuration
+
+When the Installation CD boots, it tries to detect all the hardware devices and loads the appropriate kernel modules to support the hardware. In the vast majority of cases, it does a very good job. However, in some cases it may not auto-load the kernel modules needed by the system. If the PCI auto-detection missed some of the system's hardware, the appropriate kernel modules have to be loaded manually.
+
+In the next example the 8139too module (which supports certain kinds of network interfaces) is loaded:
+root #modprobe 8139too
+Optional: User accounts
+
+If other people need access to the installation environment, or there is need to run commands as a non-root user on the installation CD (such as to chat using irssi without root privileges for security reasons), then an additional user account needs to be created and the root password set to a strong password.
+
+To change the root password, use the passwd utility:
+root #passwd
+
+New password: (Enter the new password)
+Re-enter password: (Re-enter the password)
+
+To create a user account, first enter their credentials, followed by the account's password. The useradd and passwd commands are used for these tasks.
+
+In the next example, a user called john is created:
+root #useradd -m -G users john
+root #passwd john
+
+New password: (Enter john's password)
+Re-enter password: (Re-enter john's password)
+
+To switch from the (current) root user to the newly created user account, use the su command:
+root #su - john
+Optional: Viewing documentation while installing
+
+To view the Gentoo handbook during the installation, first create a user account as described above. Then press Alt+F2 to go to a new terminal.
+
+During the installation, the links command can be used to browse the Gentoo handbook - of course only from the moment that the Internet connection is working.
+user $links https://wiki.gentoo.org/wiki/Handbook:AMD64
+
+To go back to the original terminal, press Alt+F1.
+Optional: Starting the SSH daemon
+
+To allow other users to access the system during the installation (perhaps to support during an installation, or even do it remotely), a user account needs to be created (as was documented earlier on) and the SSH daemon needs to be started.
+
+To fire up the SSH daemon, execute the following command:
+root #/etc/init.d/sshd start
+Note
+If users log on to the system, they will get a message that the host key for this system needs to be confirmed (through what is called a fingerprint). This is to be expected as it is the first time people log on to the system. However, later when the system is set up and someone logs on to the newly created system, the SSH client will warn that the host key has been changed. This is because the user now log on to - for SSH - a different server (namely the freshly installed Gentoo system rather than the live environment that the installation is currently using). Follow the instructions given on the screen then to replace the host key on the client system.
+
+To be able to use sshd, the network needs to function properly. Continue with the chapter on Configuring the network.
+
+
+
+
+
+
+Automatic network detection
+
+Maybe it just works?
+
+If the system is plugged into an Ethernet network with a DHCP server, it is very likely that the networking configuration has already been set up automatically. If so, then the many included network-aware commands on the installation CD such as ssh, scp, ping, irssi, wget, and links, among others, will work immediately.
+Determine interface names
+ifconfig command
+
+If networking has been configured, the ifconfig command should list one or more network interfaces (besides lo). In the example below eth0 shows up:
+root #ifconfig
+
+eth0      Link encap:Ethernet  HWaddr 00:50:BA:8F:61:7A
+          inet addr:192.168.0.2  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::50:ba8f:617a/10 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1498792 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1284980 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:1984 txqueuelen:100
+          RX bytes:485691215 (463.1 Mb)  TX bytes:123951388 (118.2 Mb)
+          Interrupt:11 Base address:0xe800 
+
+As a result of the shift towards predictable network interface names, the interface name on the system can be quite different from the old eth0 naming convention. Recent installation media might show regular network interfaces names like eno0, ens1, or enp5s0. Look for the interface in the ifconfig output that has an IP address related to the local network.
+Tip
+If no interfaces are displayed when the standard ifconfig command is used, try using the same command with the -a option. This option forces the utility to show all network interfaces detected by the system whether they be in an up or down state. If ifconfig -a produces no results then the hardware is faulty or the driver for the interface has not been loaded into the kernel. Both situations reach beyond the scope of this Handbook. Contact #gentoo for support.
+ip command
+
+As an alternative to ifconfig, the ip command can be used to determine interface names. The following example shows the output of ip addr (of another system so the information shown is different from the previous example):
+root #ip addr
+
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether e8:40:f2:ac:25:7a brd ff:ff:ff:ff:ff:ff
+    inet 10.0.20.77/22 brd 10.0.23.255 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ea40:f2ff:feac:257a/64 scope link 
+       valid_lft forever preferred_lft forever
+
+The output above may be a bit more complicated to read than alternative. The interface name in the above example directly follows the number; it is eno1.
+
+In the remainder of this document, the handbook will assume that the operating network interface is called eth0.
+Optional: Configure any proxies
+
+If the Internet is accessed through a proxy, then it is necessary to set up proxy information during the installation. It is very easy to define a proxy: just define a variable which contains the proxy server information.
+
+In most cases, it is sufficient to define the variables using the server hostname. As an example, we assume the proxy is called proxy.gentoo.org and the port is 8080.
+
+To set up an HTTP proxy (for HTTP and HTTPS traffic):
+root #export http_proxy="http://proxy.gentoo.org:8080"
+
+To set up an FTP proxy:
+root #export ftp_proxy="ftp://proxy.gentoo.org:8080"
+
+To set up an RSYNC proxy:
+root #export RSYNC_PROXY="proxy.gentoo.org:8080"
+
+If the proxy requires a username and password, use the following syntax for the variable:
+CODE Adding username/password to the proxy variable
+
+http://username:password@proxy.gentoo.org:8080
+
+Testing the network
+
+Try pinging your ISP's DNS server (found in /etc/resolv.conf) and a web site of choice. This ensures that the network is functioning properly and that the network packets are reaching the net, DNS name resolution is working correctly, etc.
+root #ping -c 3 www.gentoo.org
+
+If this all works, then the remainder of this chapter can be skipped to jump right to the next step of the installation instructions (Preparing the disks).
+Automatic network configuration
+
+If the network doesn't work immediately, some installation media allow the user to use net-setup (for regular or wireless networks), pppoe-setup (for ADSL users) or pptp (for PPTP users).
+
+If the installation medium does not contain any of these tools, continue with the Manual network configuration.
+
+    Regular Ethernet users should continue with Default: Using net-setup
+    ADSL users should continue with Alternative: Using PPP
+    PPTP users should continue with Alternative: Using PPTP
+
+Default: Using net-setup
+
+The simplest way to set up networking if it didn't get configured automatically is to run the net-setup script:
+root #net-setup eth0
+
+net-setup will ask some questions about the network environment. When all is done, the network connection should work. Test the network connection as stated before. If the tests are positive, congratulations! Skip the rest of this section and continue with Preparing the disks.
+
+If the network still doesn't work, continue with Manual network configuration.
+Alternative: Using PPP
+
+Assuming PPPoE is needed to connect to the Internet, the installation CD (any version) has made things easier by including ppp. Use the provided pppoe-setup script to configure the connection. During the setup the Ethernet device that is connected to your ADSL modem, the username and password, the IPs of the DNS servers and if a basic firewall is needed or not will be asked.
+root #pppoe-setup
+root #pppoe-start
+
+If something goes wrong, double-check that the username and password are correct by looking at etc/ppp/pap-secrets or /etc/ppp/chap-secrets and make sure to use the right Ethernet device. If the Ethernet device does not exist, the appropriate network modules need to be loaded. In that case continue with Manual network configuration as it will explain how to load the appropriate network modules there.
+
+If everything worked, continue with Preparing the disks.
+Alternative: Using PPTP
+
+If PPTP support is needed, use pptpclient which is provided by the installation CDs. But first make sure that the configuration is correct. Edit /etc/ppp/pap-secrets or /etc/ppp/chap-secrets so it contains the correct username/password combination:
+root #nano -w /etc/ppp/chap-secrets
+
+Then adjust /etc/ppp/options.pptp if necessary:
+root #nano -w /etc/ppp/options.pptp
+
+When all that is done, run pptp (along with the options that couldn't be set in options.pptp) to connect the server:
+root #pptp <server ip>
+
+Now continue with Preparing the disks.
+Manual network configuration
+Loading the appropriate network modules
+
+When the Installation CD boots, it tries to detect all the hardware devices and loads the appropriate kernel modules (drivers) to support the hardware. In the vast majority of cases, it does a very good job. However, in some cases, it may not auto-load the kernel modules needed.
+
+If net-setup or pppoe-setup failed, then it is possible that the network card wasn't found immediately. This means users may have to load the appropriate kernel modules manually.
+
+To find out what kernel modules are provided for networking, use the ls command:
+root #ls /lib/modules/`uname -r`/kernel/drivers/net
+
+If a driver is found for the network device, use modprobe to load the kernel module. For instance, to load the pcnet32 module:
+root #modprobe pcnet32
+
+To check if the network card is now detected, use ifconfig. A detected network card would result in something like this (again, eth0 here is just an example):
+root #ifconfig eth0
+
+eth0      Link encap:Ethernet  HWaddr FE:FD:00:00:00:00  
+          BROADCAST NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+If however the following error is shown, the network card is not detected:
+root #ifconfig eth0
+
+eth0: error fetching interface information: Device not found
+
+The available network interface names on the system can be listed through the /sys file system:
+root #ls /sys/class/net
+
+dummy0  eth0  lo  sit0  tap0  wlan0
+
+In the above example, 6 interfaces are found. The eth0 one is most likely the (wired) Ethernet adapter whereas wlan0 is the wireless one.
+
+Assuming that the network card is now detected, retry net-setup or pppoe-setup again (which should work now), but for the hardcore people we explain how to configure the network manually as well.
+
+Select one of the following sections based on your network setup:
+
+    Using DHCP for automatic IP retrieval
+    Preparing for wireless access if a wireless network is used
+    Understanding network terminology explains the basics about networking
+    Using ifconfig and route explains how to set up networking manually
+
+Using DHCP
+
+DHCP (Dynamic Host Configuration Protocol) makes it possible to automatically receive networking information (IP address, netmask, broadcast address, gateway, nameservers etc.). This only works if a DHCP server is in the network (or if the ISP provider provides a DHCP service). To have a network interface receive this information automatically, use dhcpcd:
+root #dhcpcd eth0
+
+Some network administrators require that the hostname and domainname provided by the DHCP server is used by the system. In that case, use:
+root #dhcpcd -HD eth0
+
+If this works (try pinging some Internet server, like Google), then everything is set and ready to continue. Skip the rest of this section and continue with Preparing the disks.
+Preparing for wireless access
+Note
+Support for the iwconfig command might be architecture-specific. If the command is not available see if the net-wireless/wireless-tools package is available for the current architecture. The iwconfig command will be unavailable unless the net-wireless/wireless-tools package has been installed.
+
+When using a wireless (802.11) card, the wireless settings need to be configured before going any further. To see the current wireless settings on the card, one can use iwconfig. Running iwconfig might show something like:
+root #iwconfig eth0
+
+eth0      IEEE 802.11-DS  ESSID:"GentooNode"                                   
+          Mode:Managed  Frequency:2.442GHz  Access Point: 00:09:5B:11:CC:F2    
+          Bit Rate:11Mb/s   Tx-Power=20 dBm   Sensitivity=0/65535               
+          Retry limit:16   RTS thr:off   Fragment thr:off                       
+          Power Management:off                                                  
+          Link Quality:25/10  Signal level:-51 dBm  Noise level:-102 dBm        
+          Rx invalid nwid:5901 Rx invalid crypt:0 Rx invalid frag:0 Tx          
+          excessive retries:237 Invalid misc:350282 Missed beacon:84            
+
+Note
+Some wireless cards may have a device name of wlan0 or ra0 instead of eth0. Run iwconfig without any command-line parameters to determine the correct device name.
+
+For most users, there are only two settings that might be important to change, the ESSID (aka wireless network name) or the WEP key. If the ESSID and Access Point address listed are already those of the environment's access point and the environment is not not using WEP, then the wireless configuration is already working.
+
+To change the ESSID, or add a WEP key, issue the following commands.
+
+    To set the network name to GentooNode:
+
+    root #iwconfig eth0 essid GentooNode
+
+    To set a hex WEP key:
+
+    root #iwconfig eth0 key 1234123412341234abcd
+
+    To set an ASCII WEP key, prefix the key with s::
+
+    root #iwconfig eth0 key s:some-password
+
+Note
+If the wireless network is set up with WPA or WPA2, then wpa_supplicant needs to be used. For more information on configuring wireless networking in Gentoo Linux, please read the Wireless networking chapter in the Gentoo Handbook.
+
+Confirm the wireless settings again by using iwconfig. Once wireless is working,continue configuring the IP level networking options as described in the next section (Understanding network terminology) or use the net-setup tool as described previously.
+Understanding network terminology
+Note
+If the IP address, broadcast address, netmask and nameservers are known, then skip this subsection and continue with Using ifconfig and route.
+
+If all of the above fails, the network will need to be configured manually. This is not difficult at all. However, some knowledge of network terminology and basic concepts might be necessary. After reading this section, users will know what a gateway is, what a netmask serves for, how a broadcast address is formed and why systems need nameservers.
+
+In a network, hosts are identified by their IP address (Internet Protocol address). Such an address is perceived as a combination of four numbers between 0 and 255. Well, at least when using IPv4 (IP version 4). In reality, such an IPv4 address consists of 32 bits (ones and zeros). Let's view an example:
+CODE Example of an IPv4 address
+
+IP Address (numbers):   192.168.0.2
+IP Address (bits):      11000000 10101000 00000000 00000010
+                        -------- -------- -------- --------
+                           192      168       0        2
+
+Note
+The successor of IPv4, IPv6, uses 128 bits (ones and zeros). In this section, the focus is on IPv4 addresses.
+
+Such an IP address is unique to a host as far as all accessible networks are concerned (i.e. every host that one wants to be able to reach must have a unique IP address). In order to distinguish between hosts inside and outside a network, the IP address is divided in two parts: the network part and the host part.
+
+The separation is written down with the netmask, a collection of ones followed by a collection of zeros. The part of the IP that can be mapped on the ones is the network-part, the other one is the host-part. As usual, the netmask can be written down as an IP address.
+CODE Example of network/host separation
+
+IP address:    192      168      0         2
+            11000000 10101000 00000000 00000010
+Netmask:    11111111 11111111 11111111 00000000
+               255      255     255        0
+           +--------------------------+--------+
+                    Network              Host
+
+In other words, 192.168.0.14 is part of the example network, but 192.168.1.2 is not.
+
+The broadcast address is an IP address with the same network-part as the network, but with only ones as host-part. Every host on the network listens to this IP address. It is truly meant for broadcasting packets.
+CODE Broadcast address
+
+IP address:    192      168      0         2
+            11000000 10101000 00000000 00000010
+Broadcast:  11000000 10101000 00000000 11111111
+               192      168      0        255
+           +--------------------------+--------+
+                     Network             Host
+
+To be able to surf on the Internet, each computer in the network must know which host shares the Internet connection. This host is called the gateway. Since it is a regular host, it has a regular IP address (for instance 192.168.0.1).
+
+Previously we stated that every host has its own IP address. To be able to reach this host by a name (instead of an IP address) we need a service that translates a name (such as dev.gentoo.org) to an IP address (such as 64.5.62.82). Such a service is called a name service. To use such a service, the necessary name servers need to be defined in /etc/resolv.conf.
+
+In some cases, the gateway also serves as a nameserver. Otherwise the nameservers provided by the ISP need to be entered in this file.
+
+To summarize, the following information is needed before continuing:
+Network item    Example
+The system IP address   192.168.0.2
+Netmask     255.255.255.0
+Broadcast   192.168.0.255
+Gateway     192.168.0.1
+Nameserver(s)   195.130.130.5, 195.130.130.133
+Using ifconfig and route
+
+Setting up the network consists of three steps:
+
+    Assign an IP address using ifconfig
+    Set up routing to the gateway using route
+    Finish up by placing the nameserver IPs in /etc/resolv.conf
+
+To assign an IP address, the IP address, broadcast address and netmask are needed. Then execute the following command, substituting ${IP_ADDR} with the right IP address, ${BROADCAST} with the right broadcast address and ${NETMASK} with the right netmask:
+root #ifconfig eth0 ${IP_ADDR} broadcast ${BROADCAST} netmask ${NETMASK} up
+
+Set up routing using route. Substitute ${GATEWAY} with the right gateway IP address:
+root #route add default gw ${GATEWAY}
+
+Now open /etc/resolv.conf:
+root #nano -w /etc/resolv.conf
+
+Fill in the nameserver(s) using the following as a template. Make sure to substitute ${NAMESERVER1} and ${NAMESERVER2} with the appropriate nameserver addresses:
+CODE Default template to use for /etc/resolv.conf
+
+nameserver ${NAMESERVER1}
+nameserver ${NAMESERVER2}
+
+That's it. Now test the network by pinging some Internet server (like Google). If this works, congratulations then. Continue with Preparing the disks.
+
+
+
+
+
+
+Introduction to block devices
+Block devices
+
+Let's take a good look at disk-oriented aspects of Gentoo Linux and Linux in general, including Linux filesystems, partitions, and block devices. Once the ins and outs of disks and filesystems are understood, partitions and filesystems can be established for the Gentoo Linux installation.
+
+To begin, let's look at block devices. The most famous block device is probably the one that represents the first drive in a Linux system, namely /dev/sda. SCSI and Serial ATA drives are both labeled /dev/sd*; even IDE drives are labeled /dev/sd* with the newer libata framework in the kernel. When using the old device framework, then the first IDE drive is /dev/hda.
+
+The block devices above represent an abstract interface to the disk. User programs can use these block devices to interact with your disk without worrying about whether the drives are IDE, SCSI, or something else. The program can simply address the storage on the disk as a bunch of contiguous, randomly-accessible 512-byte blocks.
+
+
+Partition tables
+
+Although it is theoretically possible to use a full disk to house a Linux system (when creating a btrfs RAID for example), this is almost never done in practice. Instead, full disk block devices are split up in smaller, more manageable block devices. On amd64 systems, these are called partitions. There are currently two standard partitioning technologies in use: MBR and GPT.
+MBR
+
+The MBR (Master Boot Record) setup uses 32-bit identifiers for the start sector and length of the partitions, and supports three partition types: primary, extended, and logical. Primary partitions have their information stored in the master boot record itself - a very small (usually 512 bytes) location at the very beginning of a disk. Due to this small space, only four primary partitions are supported (for instance, /dev/sda1 to /dev/sda4).
+
+To support more partitions, one of the primary partitions can be marked as an extended partition. This partition can then contain logical partitions (partitions within a partition).
+
+Each partition is limited to 2 TB in size (due to the 32-bit identifiers). Also, the MBR setup does not provide any backup-MBR, so if an application or user overwrites the MBR, all partition information is lost.
+GPT
+
+The GPT (GUID Partition table) setup uses 64-bit identifiers for the partitions. The location in which it stores the partition information is also much bigger than the 512 bytes of an MBR, and there is no limit on the amount of partitions. Also the size of a partition is bounded by a much greater limit (almost 8 ZB - yes, zettabytes).
+
+When a system's software interface between the operating system and firmware is UEFI (instead of BIOS), GPT is almost mandatory as compatibility issues will arise with MBR.
+
+GPT also has the advantage that it has a backup GPT at the end of the disk, which can be used to recover damage of the primary GPT at the beginning. GPT also carries CRC32 checksums to detect errors in the header and partition tables.
+GPT or MBR
+
+From the description above, one might think that using GPT should always be the recommended approach, however there are a few caveats.
+
+Using GPT on a BIOS-based computer works, but then one cannot dual-boot with a Microsoft Windows operating system. The reason is that Microsoft Windows will boot in EFI mode if it detects a GPT partition label.
+
+Some buggy BIOSes or EFIs configured to boot in BIOS/CSM/legacy mode might also have problems with booting from GPT labeled disks. If that is the case, it might be possible to work around the problem by adding the boot/active flag on the protective MBR partition which has to be done through fdisk with the -t dos option to force it to read the partition table using the MBR format.
+
+In this case, launch fdisk and toggle the flag using the a key. Press 1 to select the first partition, then press the w key to write the changes to the disk and exit the fdisk application:
+user $fdisk -t dos /dev/sda
+
+Welcome to fdisk (util-linux 2.24.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+  
+Command (m for help): a
+Partition number (1-4): 1
+  
+Command (m for help): w
+
+Using UEFI
+
+When installing Gentoo on a system that uses UEFI to boot the operating system (instead of BIOS), then it is important that an EFI system partition is created. The instructions for parted below contain the necessary pointers for this.
+
+The EFI system partition also needs to be a FAT32 partition (or vfat as it is shown on Linux systems). The instructions at the end of this chapter use ext2 as the example file system for the /boot/ partition. Make sure to use vfat, like so:
+root #mkfs.vfat /dev/sda2
+Warning
+If the boot partition is not using the FAT32 (vfat) file system, then the systems UEFI firmware will not be able to find the Linux kernel and boot the system!
+Advanced storage
+Btrfs RAID
+
+As noted above, btrfs has the ability to create filesystems across multiple devices. Btrfs filesystems generated in this way can act in the following modes: raid0, raid1, raid10, raid5, and raid6. RAID modes 5 and 6 have improved considerably, but are still considered unstable. After a multiple device filesystem has been created, new devices can be added and old devices removed in a few commands. Btrfs takes more involvement than other filesystems making it not as friendly to beginners.
+
+ext4 filesytems can be converted into btrfs filesystems, which may be useful for those who'd like to install Gentoo with a stable, well tested filesystem and gradually increase their knowledge about newer filesystems such as btrfs by experimentation.
+LVM2
+
+The amd64 Installation CDs provide support for LVM2. LVM2 increases the flexibility offered by the partitioning setup. The installation instructions below will focus on "regular" partitions, but it is good to know LVM2 is supported if that route is desired.
+Default partitioning scheme
+
+Throughout the remainder of the handbook, the following partitioning scheme will be used as a simple example layout:
+Partition   Filesystem  Size    Description
+/dev/sda1   (bootloader)    2M  BIOS boot partition
+/dev/sda2   ext2 (or vfat)  128M    Boot partition
+/dev/sda3   (swap)  512M or higher  Swap partition
+/dev/sda4   ext4    Rest of the disk    Root partition
+
+If this suffices and the reader going the GPT route they can immediately jump to Default: Using parted to partition the disk. Those who are still interested in MBR (hey - it happens!) and using the example layout can jump to Alternative: Using fdisk to partition the disk.
+
+Both fdisk and parted are partitioning utilities. fdisk is well known, stable, and recommended for the MBR partition layout while parted was one of the first Linux block device management utilities to support GPT partitions. Those who like the user interface of fdisk can use gdisk (GPT fdisk) as an alternative to parted.
+
+Before going to the creation instructions, the first set of sections will describe in more detail how partitioning schemes can be created and mention some common pitfalls.
+Designing a partition scheme
+How many and how big?
+
+The number of partitions is highly dependent on the environment. For instance, if there are lots of users, then it is advised to have /home/ separate as it increases security and makes backups easier. If Gentoo is being installed to perform as a mail server, then /var/ should be separate as all mails are stored inside /var/. A good choice of filesystem will then maximize the performance. Game servers will have a separate /opt/ as most gaming servers are installed there. The reason is similar for /home/: security and backups. In most situations, /usr/ is to be kept big: not only will it contain the majority of applications, the Portage tree alone takes around 500 MBs excluding the various sources that are stored in it.
+
+As can be seen, it very much depends on what the administrator wants to achieve. Separate partitions or volumes have the following advantages:
+
+    Choose the best performing filesystem for each partition or volume.
+    The entire system cannot run out of free space if one defunct tool is continuously writing files to a partition or volume.
+    If necessary, file system checks are reduced in time, as multiple checks can be done in parallel (although this advantage is more with multiple disks than it is with multiple partitions).
+    Security can be enhanced by mounting some partitions or volumes read-only, nosuid (setuid bits are ignored), noexec (executable bits are ignored) etc.
+
+However, multiple partitions have disadvantages as well. If not configured properly, the system might have lots of free space on one partition and none on another. Another nuisance is that separate partitions - especially for important mount points like /usr/ or /var/ - often require the administrator to boot with an initramfs to mount the partition before other boot scripts start. This isn't always the case though, so results may vary.
+
+There is also a 15-partition limit for SCSI and SATA unless the disk uses GPT labels.
+What about swap space?
+
+There is no perfect value for the swap partition. The purpose of swap space is to provide disk storage to the kernel when internal memory (RAM) is under pressure. A swap space allows for the kernel to move memory pages that are not likely to be accessed soon to disk (swap or page-out), freeing memory. Of course, if that memory is suddenly needed, these pages need to be put back in memory (page-in) which will take a while (as disks are very slow compared to internal memory).
+
+When the system is not going to run memory intensive applications or the system has lots of memory available, then it probably does not need much swap space. However, swap space is also used to store the entire memory in case of hibernation. If the system is going to need hibernation, then a bigger swap space is necessary, often at least the amount of memory installed in the system.
+
+
+What is the BIOS boot partition?
+
+A BIOS boot partition is a very small (1 to 2 MB) partition in which boot loaders like GRUB2 can put additional data that doesn't fit in the allocated storage (a few hundred bytes in case of MBR) and cannot be placed elsewhere.
+
+Such partitions are not always necessary, but considering the low space consumption and the difficulties we have with documenting the plethora of partitioning differences otherwise, it is recommended to create it in either case.
+
+For completeness, the BIOS boot partition is needed when GPT partition layout is used with GRUB2, or when the MBR partition layout is used with GRUB2 when the first partition starts earlier than the 1 MB location on the disk.
+Default: Using parted to partition the disk
+
+In this chapter, the example partition layout mentioned earlier in the instructions will be used:
+Partition   Description
+/dev/sda1   BIOS boot partition
+/dev/sda2   Boot partition
+/dev/sda3   Swap partition
+/dev/sda4   Root partition
+
+Change the partition layout according to personal preference.
+Viewing the current partition layout with parted
+
+The parted application offers a simple interface for partitioning the disks and supports very large partitions (more than 2 TB). Fire up parted against the disk (in our example, we use /dev/sda). It is recommended to ask parted to use optimal partition alignment:
+root #parted -a optimal /dev/sda
+
+GNU Parted 2.3
+Using /dev/sda
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+
+Alignment means that partitions are started on well-known boundaries within the disk, ensuring that operations on the disk from the operating system level (retrieve pages from the disk) use the least amount of internal disk operations. Misaligned partitions might require the disk to fetch two pages instead of one even if the operating system asked for a single page.
+
+To find out about all options supported by parted, type help and press return. 

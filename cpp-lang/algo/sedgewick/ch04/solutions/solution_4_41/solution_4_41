@@ -1,0 +1,43 @@
+Exercise 4.41:
+Using the conventions of Exercise 4.40, give a way to insert plus sign and asterisks in the sequence "E a s Y" so that the sequence of values returned by the get operations is:
+(1) "E s a Y";
+(2) "Y a s E";
+(3) "a Y s E";
+(4) "a s Y E";
+
+(1) EasY -> EsaY
+E       E
+a       Ea
+s       Eas
++   E   as
+Y       Yas
+*   s   Ya
+*   a   Y
+*   Y
+
+(2) EasY -> YasE
+E       E
+a       Ea
+s       Eas
+Y       YEas
++   Y   Eas   -> get 'a' is not possible
+
+(3) EasY -> aYsE
+E       E
+a       Ea
+*   a   E
+s       Es
+Y       YEs
++   Y   Es
+*   s   E
+*   E
+
+(4) EasY -> asYE
+E       E
+a       Ea
+*   a   E
+s       Es
+Y       YEs
+*   s   YE
++   Y   E
+*   E

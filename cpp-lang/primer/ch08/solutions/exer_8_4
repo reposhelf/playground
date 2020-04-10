@@ -1,0 +1,5 @@
+Write a function to open a file for input and read its contents into a vector of strings, storing each line as a separate element in the vector.
+Rewrite the previous program to store each word in a separate element.
+Rewrite the bookstore program from § 7.1.1 (p. 256) to read its transactions from a file. Pass the name of the file as an argument to main (§ 6.2.5, p. 218).
+
+

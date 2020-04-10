@@ -1,0 +1,40 @@
+/**
+ * Created by vova on 12/29/16.
+ */
+public class HeartAdapter implements BeatModelInterface {
+    HeartModelInterface heart;
+
+    public HeartAdapter(HeartModelInterface heart) {
+        this.heart = heart;
+    }
+
+    public void initialize() {
+        heart.initialize();
+    }
+
+    public void on() {}
+
+    public void off() {}
+
+    public void setBPM(int bpm) {}
+
+    public int getBPM() {
+        return heart.getHeartRate();
+    }
+
+    public void registerObserver(BeatObserver o) {
+        heart.registerObserver(o);
+    }
+
+    public void removeObserver(BeatObserver o) {
+        heart.removeObserver(o);
+    }
+
+    public void registerObserver(BPMObserver o) {
+        heart.registerObserver(o);
+    }
+
+    public void removeObserver(BPMObserver o) {
+        heart.removeObserver(o);
+    }
+}

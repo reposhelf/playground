@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gradients.html</file>
+        <file>gradientwidget.cpp</file>
+    </qresource>
+</RCC>

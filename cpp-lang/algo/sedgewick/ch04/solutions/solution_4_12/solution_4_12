@@ -1,0 +1,31 @@
+Exercise 4.12.
+Convert to postfix the expression
+( 5 * ( ( 9 * 8 ) + ( 7 * ( 4 + 6 ) ) ) )
+
+Solution:
+
+Expression    Stream    Stack
+(
+5             5
+*                       *
+(                       *
+(                       *
+9             9         *
+*                       * *
+8             8         * *
+)             *         *
++                       * +
+(                       * +
+7             7         * +
+*                       * + *
+(                       * + *
+4             4         * + *
++                       * + * +
+6             6         * + * +
+)             +         * + *
+)             *         * +
+)             +         *
+)             *
+
+Answer:
+5 9 8 * 7 4 6 + * + *

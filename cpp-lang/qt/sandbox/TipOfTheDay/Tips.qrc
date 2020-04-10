@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/texts">
+        <file>tips/0001.htm</file>
+        <file>tips/0002.htm</file>
+        <file>tips/0003.htm</file>
+        <file>tips/0004.htm</file>
+        <file>tips/0005.htm</file>
+        <file>tips/0006.htm</file>
+        <file>tips/0007.htm</file>
+        <file>tips/0008.htm</file>
+        <file>tips/0009.htm</file>
+        <file>tips/0010.htm</file>
+        <file>tips/0011.htm</file>
+        <file>tips/0012.htm</file>
+        <file>tips/0013.htm</file>
+        <file>tips/0014.htm</file>
+        <file>tips/0015.htm</file>
+        <file>tips/0016.htm</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>tips/0001.png</file>
+        <file>tips/0003.png</file>
+        <file>tips/0015.png</file>
+        <file>tips/0016.png</file>
+    </qresource>
+</RCC>
+

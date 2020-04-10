@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>images/btn_exit.png</file>
+    <file>images/btn_ph_icon.png</file>
+    <file>images/btn_v_icon.png</file>
+    <file>images/btn_vstop_icon.png</file>
+    <file>images/video_shoot.gif</file>
+    <file>images/win_icon.png</file>
+</qresource>
+</RCC>
